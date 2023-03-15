@@ -1,0 +1,49 @@
+body {
+    font-family: Monospace;
+    margin: 0px;
+}
+
+.space {
+    margin-top:20px;
+}
+
+span {
+    color: #222;
+    font-size: 11px;
+    text-align: center;
+}
+
+#box-selector {
+    color: #fff;
+    text-align: center;
+    display:block;
+}
+
+#box-selector .box-type-image {
+    width: 70px;
+    margin-left: 10px;
+}
+
+.box-size {
+    margin: 0px;
+    padding: 0px;
+    width: 20%;
+    text-align: center;
+}
+
+#size-selector {
+}
+
+#box-renderer {
+    float: left;
+}
+
+.texture {
+    width: 25px;
+    height: 25px;
+}
+
+.texture-image {
+    width: 50px;
+    height: 25px;
+}

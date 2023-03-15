@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Making Box</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-slider.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+
+        <script src="./js/jquery/jquery-2.1.1.min.js"></script>
+
+        <script src="./js/bootstrap.min.js"></script>
+
+        <script src="./js/lib/three.min.js"></script>
+
+        <script src="./js/geometries/ConvexGeometry.js"></script>
+
+        <script src="./js/loader/STLLoader.js"></script>
+
+        <script src="./js/js/Detector.js"></script>
+        <script src="./js/lib/stats.min.js"></script>
+        <script src="./js/controls/OrbitControls.js"></script>
+        <script src="./js/js.min.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h2>Box Making</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div id="box-selector" class="row">
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="std-crate" name="box_type" checked /><img src="./images/std-crate.png" class="box-type-image" /><br><span>STD Crate</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="std-case" name="box_type" /><img src="./images/fs-case.png" class="box-type-image" /><br><span>STD Case</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="fs-crate" name="box_type" /><img src="./images/fs-crate.png" class="box-type-image" /><br><span>FS Crate</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="fs-case" name="box_type" /><img src="./images/fs-crate.png" class="box-type-image" /><br><span>FS Case</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="display-case" name="box_type" /><img src="./images/fs-crate.png" class="box-type-image" /><br><span>DISPLAY Case</span></div>
+                    </div>
+                    <div class="row space"></div>
+                    <div id="size-selector" class="row">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Length</th>
+                                <th>Width</th>
+                                <th>Height</th>
+                            </tr>
+                            <tr>
+                                <td>Internal Crate Size</td>
+                                <td><input type="input" class="form-control" id="internal_length" placeholder="mm"></input></td>
+                                <td><input type="input" class="form-control" id="internal_width" placeholder="mm"></input></td>
+                                <td><input type="input" class="form-control" id="internal_height" placeholder="mm"></input></td>
+                            </tr>
+                            <tr>
+                                <td>External Dimentions</td>
+                                <td><input type="input" class="form-control" id="external_length" placeholder="1562mm"></input></td>
+                                <td><input type="input" class="form-control" id="external_width" placeholder="1262mm"></input></td>
+                                <td><input type="input" class="form-control" id="external_height" placeholder="1146mm"></input></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row space"></div>
+                    <div class="row space"></div>
+                    <div class="row space"></div>
+                    <div class="row space"></div>
+                    <div class="row space"></div>
+                    <div class="row space"></div>
+                    <div class="row">
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="all" name="box_line" class="box-checked" checked /><span>&nbsp;All</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="base" name="box_line" class="box-checked" /><span>&nbsp;Base</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="side" name="box_line" class="box-checked" /><span>&nbsp;Side</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="end" name="box_line" class="box-checked" /><span>&nbsp;End</span></div>
+                        <div class="col-sm-2 col-md-3 box-size"><input type="radio" id="top" name="box_line" class="box-checked" /><span>&nbsp;Top</span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div id="box-renderer"></div>
+                </div>
+            </div>
+            <div class="row space"></div>
+            <div class="row col-md-12">
+                <div class="col-md-4" style="text-align: center;">
+                    <div id="line-top-renderer"></div>
+                    <span>top</span>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <div id="line-front-renderer"></div>
+                    <span>front</span>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <div id="line-side-renderer"></div>
+                    <span>side</span>
+                </div>
+            </div>
+            <div class="row space"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="part-renderer"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
